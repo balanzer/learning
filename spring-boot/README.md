@@ -12,3 +12,7 @@ default profile port : 80
 local profile port : 8080 = VM argument - -Dspring.profiles.active=local - http://localhost:8080/api/greeting
 
 dev profile port : 8090 = VM argument - -Dspring.profiles.active=dev   - http://localhost:8090/api/greeting
+
+
+#generate simple java maven project
+mvn archetype:generate -DgroupId=com.yourcompany -DartifactId=myproject -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
