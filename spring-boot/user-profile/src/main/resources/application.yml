@@ -1,5 +1,10 @@
 server:
   port: 80
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.mtv: DEBUG
+   
 --- 
 spring:
   profiles: local
