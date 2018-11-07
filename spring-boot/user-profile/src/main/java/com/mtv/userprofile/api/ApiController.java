@@ -18,7 +18,12 @@ public class ApiController {
 
 	@GetMapping
 	public String defaultGreeting() {
-		return "Hello world from api";
+		return "Hello world from api - default mapping";
+	}
+
+	@GetMapping("/greeting")
+	public String sayGreeting() {
+		return "Hello world from api - greeting mapping";
 	}
 
 }
