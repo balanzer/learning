@@ -11,8 +11,12 @@ import com.mtv.user.Profile;
 @Service
 public class UserProfileService {
 
-	public List<Profile> getUserProfile() {
+	private int getNextInt(int max) {
 		final Random numGen = new Random();
+		return numGen.nextInt(max);
+	}
+
+	public List<Profile> getUserProfile() {
 
 		final List<Profile> userProfiles = new ArrayList<>();
 
@@ -20,8 +24,8 @@ public class UserProfileService {
 
 		final String[] lastName = { "Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller" };
 
-		for (Long i = 10001l; i <= 10020; i++) {
-			final int rand = numGen.nextInt(firstName.length);
+		for (Long i = 10001l; i <= 10050; i++) {
+			final int rand = this.getNextInt(firstName.length);
 			userProfiles.add(new Profile(i, firstName[rand], lastName[rand],
 					firstName[rand] + "." + lastName[rand] + "@gmail.com"));
 		}
