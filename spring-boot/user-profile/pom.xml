@@ -23,6 +23,7 @@
 		<modules>
 			<module>domain</module>
 			<module>application</module>
+			<module>user-profile-clr</module>
 		</modules>
 	
 
