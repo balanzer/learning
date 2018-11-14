@@ -13,7 +13,7 @@ public class UserProfileApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(UserProfileApplication.class, args);
 		logger.info("*********************************************************************");
-		logger.info("Application started");
+		logger.info("Application started - UserProfileApplication");
 		logger.info("*********************************************************************");
 	}
 }

@@ -7,6 +7,10 @@ public class Profile {
 	private String lastName;
 	private String email;
 
+	public Profile() {
+
+	}
+
 	public Profile(Long id, String firstName, String lastName, String email) {
 		super();
 		this.id = id;
@@ -45,5 +49,11 @@ public class Profile {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+
+	@Override
+	public String toString() {
+		return "Profile [id=" + this.id + ", firstName=" + this.firstName + ", lastName=" + this.lastName + ", email="
+				+ this.email + "]";
 	}
 }
