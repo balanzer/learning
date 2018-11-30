@@ -5,10 +5,10 @@ logging:
     org.springframework.web: INFO
     com.mtv: DEBUG
  
-spring:
-  jpa:
-    hibernate:
-      ddl-auto: none   
+#spring:
+# jpa:
+#    hibernate:
+#      ddl-auto: none   
 --- 
 spring:
   profiles: local
