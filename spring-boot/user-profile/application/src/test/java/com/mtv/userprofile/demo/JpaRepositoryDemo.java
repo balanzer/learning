@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.mtv.userprofile.entity.Department;
 import com.mtv.userprofile.repo.DepartmentRepository;
 
 @RunWith(SpringRunner.class)
@@ -28,12 +27,14 @@ public class JpaRepositoryDemo {
 	@Test
 	public void runJpaRepositoryMethods() {
 
-		this.departmentRepository.save(new Department("Humanities"));
-		this.departmentRepository.flush();
-
-		this.departmentRepository.saveAndFlush(new Department("Fine Arts"));
-
-		this.departmentRepository.save(new Department("Social Science"));
+		/*
+		 * this.departmentRepository.save(new Department("Humanities"));
+		 * this.departmentRepository.flush();
+		 * 
+		 * this.departmentRepository.saveAndFlush(new Department("Fine Arts"));
+		 * 
+		 * this.departmentRepository.save(new Department("Social Science"));
+		 */
 
 		System.out.println("\n*************3 Departments*************");
 		this.departmentRepository.findAll().forEach(System.out::println);

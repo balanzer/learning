@@ -10,6 +10,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -23,14 +24,18 @@ public class Department {
 	@Column
 	private String name;
 
-	@OneToMany(mappedBy = "department", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private final List<Course> courses = new ArrayList<>();
+	@OneToOne
+	private Staff chair;
+
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "department", cascade = CascadeType.ALL)
+	private List<Course> courses = new ArrayList<>();
 
 	protected Department() {
 	}
 
-	public Department(String name) {
+	public Department(String name, Staff chair) {
 		this.name = name;
+		this.chair = chair;
 	}
 
 	public void addCourse(Course course) {
@@ -45,9 +50,20 @@ public class Department {
 		return this.name;
 	}
 
-	@Override
-	public String toString() {
-		return "Department{" + "id=" + this.id + ", name='" + this.name + '\'' + ", courses=" + this.courses + '}';
+	public void setChair(Staff chair) {
+		this.chair = chair;
 	}
 
+	public void setCourses(List<Course> courses) {
+		this.courses = courses;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Department{" + "chair=" + this.chair + ", name='" + this.name + '\'' + ", id=" + this.id + '}';
+	}
 }
