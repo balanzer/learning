@@ -1,1 +1,3 @@
-let todo : string ="hello-123";
+let todo: string = "hello-tst123";
+
+console.log("From JS Script : " + todo);
