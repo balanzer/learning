@@ -1,20 +1,15 @@
-function log(value) {
+function log() {
+    var values = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        values[_i] = arguments[_i];
+    }
     //  console.log("*****************************************");
-    console.info("" + value);
+    var consValue = " ";
+    for (var _a = 0, values_1 = values; _a < values_1.length; _a++) {
+        var value = values_1[_a];
+        consValue = consValue + value + " ";
+    }
+    console.info("Message : " + consValue);
     //  console.log("*****************************************");
 }
-//log(10);
-//log("Hello World");
-var array = ["one", "two", "three", "four"];
-/**
- * For loop
- */
-for (var index in array) {
-    var value = array[index];
-    log(index + " item is " + value);
-}
-for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
-    var value_1 = array_1[_i];
-    // var value = array[index];
-    log("item is " + value_1);
-}
+log("Loading app.ts");

@@ -1,24 +1,11 @@
-function log(value) {
+function log(...values) {
   //  console.log("*****************************************");
-  console.info(`${value}`);
+  let consValue = " ";
+  for (let value of values) {
+    consValue = consValue + value + " ";
+  }
+  console.info(`Message : ${consValue}`);
   //  console.log("*****************************************");
 }
 
-//log(10);
-//log("Hello World");
-
-let array = ["one", "two", "three", "four"];
-
-/**
- * For loop
- */
-
-for (let index in array) {
-  var value = array[index];
-  log(`${index} item is ${value}`);
-}
-
-for (let value of array) {
-  // var value = array[index];
-  log(`item is ${value}`);
-}
+log("Loading app.ts");
