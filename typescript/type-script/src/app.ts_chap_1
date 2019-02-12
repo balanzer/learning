@@ -1,0 +1,74 @@
+function log(...values) {
+  //  console.log("*****************************************");
+  let consValue = " ";
+  for (let value of values) {
+    consValue = consValue + value + " ";
+  }
+  console.info(`Message : ${consValue}`);
+  //  console.log("*****************************************");
+}
+
+//log(10);
+//log("Hello World");
+
+let array = ["one", "two", "three", "four"];
+
+/**
+ * For loop
+ */
+
+for (let index in array) {
+  var value = array[index];
+  log(`${index} item is ${value}`);
+}
+
+for (let value of array) {
+  // var value = array[index];
+  log(`item is ${value}`);
+}
+
+/**
+ * Lamdas
+ */
+
+var filteredValues = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(x => {
+  return x > 5;
+});
+log(filteredValues);
+var filteredValues = [1, 2, 3, 4, 5, 6, 7, 8, 9].filter(x => x > 5);
+log(filteredValues);
+
+/**
+ * destructuring
+ */
+var a = 10;
+var b = 5;
+
+log(`
+Before a is ${a}, b is ${b}
+`);
+[a, b] = [b, a];
+log(`
+After a is ${a}, b is ${b}
+`);
+
+var todo = {
+  id: 123,
+  title: "Task 1 ",
+  completed: false,
+  temp: 123
+};
+var { id, title, completed, temp: tempid } = todo;
+
+/**
+ * spread-operator
+ */
+log(1);
+log(1, 2);
+log(1, 2, 3);
+log(1, 2, 3, 4, 5, 6, 7, 7, 8);
+
+let arr1 = [7, 8, 9];
+let arr2 = [1, 2, 3, 43, 4, ...arr1, 3, 3, 4, 3, 43, 4];
+
+log(arr2);
