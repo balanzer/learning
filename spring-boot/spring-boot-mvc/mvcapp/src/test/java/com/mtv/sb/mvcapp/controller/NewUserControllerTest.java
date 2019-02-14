@@ -16,7 +16,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.mtv.sb.mvcapp.domain.UserProfile;
+import com.mtv.sb.domain.Profile;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(NewUserController.class)
@@ -44,7 +44,7 @@ public class NewUserControllerTest {
 	@Test
 	public void testPostMapping() throws Exception {
 
-		final UserProfile newProfile = new UserProfile();
+		final Profile newProfile = new Profile();
 
 		// simulate the form submit (POST)
 		this.mockMvc.perform(post("/newuser", newProfile)).andExpect(status().isOk()).andReturn();

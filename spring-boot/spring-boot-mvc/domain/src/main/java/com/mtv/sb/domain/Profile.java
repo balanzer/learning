@@ -1,7 +1,6 @@
-package com.mtv.sb.mvcapp.domain;
+package com.mtv.sb.domain;
 
-public class UserProfile {
-
+public class Profile {
 	private String firstName;
 
 	public String getFirstName() {
