@@ -17,6 +17,13 @@ public class NewUserController {
 		return "newUser";
 	}
 
+	@GetMapping(path = "/")
+	public String home() {
+		logger.debug("home - start");
+		// add implementation later
+		return "home";
+	}
+
 	@PostMapping(path = "/newuser")
 	public String submitUserProfile() {
 		logger.debug("submitUserProfile - start");
