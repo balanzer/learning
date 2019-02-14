@@ -19,6 +19,7 @@ public class MvcAppApplication {
 
 		SpringApplication.run(MvcAppApplication.class, args);
 
+		logger.info("*****************************************************************************");
 		logger.info("App : {}, Started on : {} ", appName, appStartTime);
 
 	}
