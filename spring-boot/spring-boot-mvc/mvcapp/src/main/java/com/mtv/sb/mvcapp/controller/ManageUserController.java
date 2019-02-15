@@ -2,6 +2,7 @@ package com.mtv.sb.mvcapp.controller;
 
 import java.util.List;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,15 @@ public class ManageUserController {
 		logger.debug("listAllusers - start");
 		// add implementation later
 		final List<User> users = this.service.listUsers();
+
+		if (CollectionUtils.isNotEmpty(users)) {
+			logger.debug("listAllusers total users : {}", users.size());
+		} else {
+			logger.error("listAllusers failed to get users from service");
+		}
+
 		return "listUsers";
+
 	}
 
 }

@@ -41,10 +41,25 @@ public class ManageUsers {
 	
 	
 	public List<User> listUsers(){
-		return null;
+		return users;
+	}
+	
+	public User getUser(long uid){
+		return getUserByUID(uid);
 	}
 	
 	
+	private User getUserByUID(Long uid) {
+	
+		for (User user:users) {
+			if(user.getUid()==uid) {
+				return user;
+			}
+		}
+		
+		return null;
+	}
+
 	public long createUser(User user){
 		return 0;
 	}
