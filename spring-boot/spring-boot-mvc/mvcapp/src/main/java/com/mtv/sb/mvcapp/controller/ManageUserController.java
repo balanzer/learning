@@ -22,7 +22,7 @@ public class ManageUserController {
 	ManageUsers service;
 
 	@GetMapping(path = "/listusers")
-	public ModelAndView listAllusers() {
+	public ModelAndView listUsers() {
 		logger.debug("listAllusers - start");
 		// add implementation later
 		final List<User> users = this.service.listUsers();
@@ -38,6 +38,14 @@ public class ManageUserController {
 
 		return mav;
 
+	}
+
+	@GetMapping(path = "/viewuser")
+	public ModelAndView viewUser() {
+		logger.debug("viewUser - start");
+		final ModelAndView mav = new ModelAndView("viewUser");
+
+		return mav;
 	}
 
 }
