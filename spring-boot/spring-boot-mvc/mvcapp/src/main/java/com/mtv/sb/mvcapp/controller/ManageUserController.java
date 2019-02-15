@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,13 +22,8 @@ public class ManageUserController extends BaseController {
 	@Autowired
 	ManageUsers service;
 
-	@ModelAttribute
-	public void doPreActions() {
-		logger.debug("doPreActions");
-	}
-
 	@GetMapping(path = "/listusers")
-	public ModelAndView listUsers() {
+	public ModelAndView listUsers() throws Exception {
 		logger.debug("listAllusers - start");
 		// add implementation later
 		final List<User> users = this.service.listUsers();
