@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,12 +16,17 @@ import com.mtv.sb.domain.User;
 import com.mtv.sb.service.ManageUsers;
 
 @Controller
-public class ManageUserController {
+public class ManageUserController extends BaseController {
 
 	private static final Logger logger = LogManager.getLogger(ManageUserController.class);
 
 	@Autowired
 	ManageUsers service;
+
+	@ModelAttribute
+	public void doPreActions() {
+		logger.debug("doPreActions");
+	}
 
 	@GetMapping(path = "/listusers")
 	public ModelAndView listUsers() {
