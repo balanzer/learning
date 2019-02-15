@@ -6,9 +6,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.mtv.sb.domain.User;
+//import com.mtv.sb.service.appservice.ManageUsers;
+
 @Controller
 public class NewUserController {
 	private static final Logger logger = LogManager.getLogger(NewUserController.class);
+
+	// @Autowired
+	// ManageUsers service;
 
 	@GetMapping(path = "/newuser")
 	public String beginUserCreation() {
@@ -27,7 +33,9 @@ public class NewUserController {
 	@PostMapping(path = "/newuser")
 	public String submitUserProfile() {
 		logger.debug("submitUserProfile - start");
+		final User user = null;
 		// add implementation later
+		// this.service.createUser(user);
 		return "newUserConfirmation";
 	}
 
