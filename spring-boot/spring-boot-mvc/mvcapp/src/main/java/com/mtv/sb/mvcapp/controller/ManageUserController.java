@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mtv.sb.domain.User;
@@ -40,11 +41,11 @@ public class ManageUserController {
 
 	}
 
-	@GetMapping(path = "/viewuser")
-	public ModelAndView viewUser() {
-		logger.debug("viewUser - start");
+	@GetMapping(path = "/listusers/{uid}")
+	public ModelAndView viewUser(@PathVariable Long uid) {
+		logger.debug("listusers - start");
 		final ModelAndView mav = new ModelAndView("viewUser");
-
+		mav.addObject("uid", uid);
 		return mav;
 	}
 
